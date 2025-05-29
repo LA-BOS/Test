@@ -1,7 +1,7 @@
 <?php
 namespace App\Controllers;
 
-use App\Controller; // Kế thừa từ Controller
+use App\Controller;
 use App\Models\Customer;
 
 class CustomerController extends Controller // Tính chất kế thừa
