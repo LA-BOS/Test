@@ -32,6 +32,7 @@ class Model
 
     public function __destruct()
     {
-        $this->connection->close();
+        // PDO tự động đóng kết nối khi object bị hủy
+        $this->connection = null;
     }
 }

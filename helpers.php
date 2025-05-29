@@ -103,3 +103,37 @@ if (!function_exists('random_string')) {
         return $randomString;
     }
 }
+if (!function_exists('view')) {
+    function view($viewPath, $data = [])
+    {
+        // Extract data array to make variables available in view
+        extract($data);
+        
+        // Convert dot notation to directory separator
+        $viewPath = str_replace('.', '/', $viewPath);
+        
+        // Build full path to view file
+        $viewFile = PATH_ROOT . "views/{$viewPath}.php";
+        
+        // Check if view file exists
+        if (file_exists($viewFile)) {
+            include $viewFile;
+        } else {
+            throw new Exception("View file not found: {$viewFile}");
+        }
+    }
+}
+
+if (!function_exists('asset')) {
+    function asset($path)
+    {
+        return BASE_URL . ltrim($path, '/');
+    }
+}
+
+if (!function_exists('url')) {
+    function url($path = '')
+    {
+        return BASE_URL . ltrim($path, '/');
+    }
+}
