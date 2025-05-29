@@ -15,7 +15,7 @@
                     <h4>Admin Panel</h4>
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link text-white active" href="/admin/customers">
+                            <a class="nav-link text-white active" href="<?= BASE_URL ?>/admin/customers">
                                 <i class="fas fa-users"></i> Khách hàng
                             </a>
                         </li>
@@ -27,10 +27,10 @@
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <h2><?= $title ?></h2>
                         <div>
-                            <a href="/admin/customers/edit/<?= $customer['id'] ?>" class="btn btn-warning me-2">
+                            <a href="<?= BASE_URL ?>/admin/customers/edit/<?= $customer['id'] ?>" class="btn btn-warning me-2">
                                 <i class="fas fa-edit"></i> Sửa
                             </a>
-                            <a href="/admin/customers" class="btn btn-secondary">
+                            <a href="<?= BASE_URL ?>/admin/customers" class="btn btn-secondary">
                                 <i class="fas fa-arrow-left"></i> Quay lại
                             </a>
                         </div>
@@ -146,13 +146,13 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="btn-group" role="group">
-                                        <a href="/admin/customers/edit/<?= $customer['id'] ?>" class="btn btn-warning">
+                                        <a href="<?= BASE_URL ?>/admin/customers/edit/<?= $customer['id'] ?>" class="btn btn-warning">
                                             <i class="fas fa-edit"></i> Sửa thông tin
                                         </a>
                                         <button onclick="deleteCustomer(<?= $customer['id'] ?>)" class="btn btn-danger">
                                             <i class="fas fa-trash"></i> Xóa khách hàng
                                         </button>
-                                        <a href="/admin/customers" class="btn btn-secondary">
+                                        <a href="<?= BASE_URL ?>/admin/customers" class="btn btn-secondary">
                                             <i class="fas fa-list"></i> Danh sách khách hàng
                                         </a>
                                     </div>
@@ -169,7 +169,7 @@
     <script>
         function deleteCustomer(id) {
             if(confirm('Bạn có chắc chắn muốn xóa khách hàng này?\nHành động này không thể hoàn tác!')) {
-                window.location.href = '/admin/customers/delete/' + id;
+                window.location.href = BASE_URL + '/admin/customers/delete/' + id;
             }
         }
     </script>

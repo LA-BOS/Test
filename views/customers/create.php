@@ -15,7 +15,7 @@
                     <h4>Admin Panel</h4>
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link text-white active" href="/admin/customers">
+                            <a class="nav-link text-white active" href="<?= BASE_URL ?>/admin/customers">
                                 <i class="fas fa-users"></i> Khách hàng
                             </a>
                         </li>
@@ -26,7 +26,7 @@
                 <div class="p-4">
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <h2><?= $title ?></h2>
-                        <a href="/admin/customers" class="btn btn-secondary">
+                        <a href="<?= BASE_URL ?>/admin/customers" class="btn btn-secondary">
                             <i class="fas fa-arrow-left"></i> Quay lại
                         </a>
                     </div>
@@ -41,7 +41,7 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <form method="POST" action="/admin/customers/store" enctype="multipart/form-data">
+                            <form method="POST" action="<?= BASE_URL ?>/admin/customers/store" enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="mb-3">
@@ -119,7 +119,7 @@
                                     <button type="submit" class="btn btn-primary me-2">
                                         <i class="fas fa-save"></i> Lưu khách hàng
                                     </button>
-                                    <a href="/admin/customers" class="btn btn-secondary">
+                                    <a href="<?= BASE_URL ?>/admin/customers" class="btn btn-secondary">
                                         <i class="fas fa-times"></i> Hủy
                                     </a>
                                 </div>

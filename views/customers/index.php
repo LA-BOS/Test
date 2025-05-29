@@ -29,7 +29,7 @@
                 <div class="p-4">
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <h2><?= $title ?></h2>
-                        <a href="/admin/customers/create" class="btn btn-primary">
+                        <a href="<?= BASE_URL ?>/admin/customers/create" class="btn btn-primary">
                             <i class="fas fa-plus"></i> Thêm khách hàng
                         </a>
                     </div>
@@ -123,11 +123,11 @@
                                                     </td>
                                                     <td>
                                                         <div class="btn-group" role="group">
-                                                            <a href="/admin/customers/show/<?= $customer['id'] ?>" 
+                                                            <a href="<?= BASE_URL ?>/admin/customers/show/<?= $customer['id'] ?>" 
                                                                class="btn btn-sm btn-info" title="Xem chi tiết">
                                                                 <i class="fas fa-eye"></i>
                                                             </a>
-                                                            <a href="/admin/customers/edit/<?= $customer['id'] ?>" 
+                                                            <a href="<?= BASE_URL ?>/admin/customers/edit/<?= $customer['id'] ?>" 
                                                                class="btn btn-sm btn-warning" title="Sửa">
                                                                 <i class="fas fa-edit"></i>
                                                             </a>
@@ -154,7 +154,7 @@
     <script>
         function deleteCustomer(id) {
             if(confirm('Bạn có chắc chắn muốn xóa khách hàng này?')) {
-                window.location.href = '/admin/customers/delete/' + id;
+                window.location.href = BASE_URL + '/admin/customers/delete/' + id;
             }
         }
     </script>
