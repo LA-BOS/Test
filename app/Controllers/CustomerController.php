@@ -35,6 +35,7 @@ class CustomerController extends Controller // Tính chất kế thừa
     {
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
             redirect('/admin/customers');
+            return;
         }
 
         $data = [

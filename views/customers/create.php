@@ -41,7 +41,7 @@
 
                     <div class="card">
                         <div class="card-body">
-                            <form method="POST" action="<?= BASE_URL ?>/admin/customers/store" enctype="multipart/form-data">
+                            <form method="POST" action="<?= BASE_URL ?>/admin/customers" enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="mb-3">

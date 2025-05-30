@@ -18,7 +18,7 @@
                     <h4>Admin Panel</h4>
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link text-white active" href="/admin/customers">
+                            <a class="nav-link text-white active" href="<?= BASE_URL ?>/admin/customers">
                                 <i class="fas fa-users"></i> Khách hàng
                             </a>
                         </li>
@@ -56,14 +56,15 @@
                             <form method="GET" class="row g-3">
                                 <div class="col-md-8">
                                     <input type="text" class="form-control" name="search" 
-                                           placeholder="Tìm kiếm theo tên, email, số điện thoại..." 
-                                           value="<?= htmlspecialchars($_GET['search'] ?? '') ?>">
+                                        placeholder="Tìm kiếm theo tên, email, số điện thoại..." 
+                                        value="<?= htmlspecialchars($_GET['search'] ?? '') ?>">
                                 </div>
                                 <div class="col-md-4">
                                     <button type="submit" class="btn btn-outline-primary me-2">
                                         <i class="fas fa-search"></i> Tìm kiếm
                                     </button>
-                                    <a href="/admin/customers" class="btn btn-outline-secondary">
+                                    <!-- SỬA: thêm BASE_URL -->
+                                    <a href="<?= BASE_URL ?>/admin/customers" class="btn btn-outline-secondary">
                                         <i class="fas fa-refresh"></i> Reset
                                     </a>
                                 </div>
@@ -152,6 +153,9 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        // Định nghĩa BASE_URL cho JavaScript
+        const BASE_URL = '<?= BASE_URL ?>';
+        
         function deleteCustomer(id) {
             if(confirm('Bạn có chắc chắn muốn xóa khách hàng này?')) {
                 window.location.href = BASE_URL + '/admin/customers/delete/' + id;

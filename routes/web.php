@@ -1,6 +1,6 @@
 <?php
 use App\Controllers\HomeController;
-use App\Controllers\CustomerController; // Sửa từ CustumerController
+use App\Controllers\CustomerController;
 use Bramus\Router\Router;
 
 $router = new Router();
@@ -30,8 +30,8 @@ $router->mount('/admin', function() use ($router) {
         // Hiển thị form thêm khách hàng
         $router->get('/create', CustomerController::class . '@create');
         
-        // Xử lý thêm khách hàng
-        $router->post('/store', CustomerController::class . '@store');
+        // Xử lý thêm khách hàng - SỬA: từ /store thành /
+        $router->post('/', CustomerController::class . '@store');
         
         // Hiển thị chi tiết khách hàng
         $router->get('/show/(\d+)', CustomerController::class . '@show');
@@ -39,7 +39,7 @@ $router->mount('/admin', function() use ($router) {
         // Hiển thị form sửa khách hàng
         $router->get('/edit/(\d+)', CustomerController::class . '@edit');
         
-        // Xử lý cập nhật khách hàng
+        // Xử lý cập nhật khách hàng - SỬA: thêm parameter
         $router->post('/update/(\d+)', CustomerController::class . '@update');
         
         // Xóa khách hàng
